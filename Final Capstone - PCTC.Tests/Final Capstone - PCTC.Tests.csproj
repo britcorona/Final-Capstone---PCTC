@@ -85,6 +85,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\TimeCapsuleTests.cs" />
+    <Compile Include="Models\PCTCUserTests.cs" />
+    <Compile Include="Models\ContentInsideTCTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
   </ItemGroup>
