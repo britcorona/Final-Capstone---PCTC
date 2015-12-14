@@ -7,22 +7,17 @@ using System.Web;
 
 namespace Final_Capstone___PCTC.Models
 {
-    public class TimeCapsule
+    public class Child
     {
         [Key]
-        public int TCId { get; set; }
+        public int ChildId { get; set; }
 
-        //[ForeignKey("UserId")]
-        //public int UserId { get; set; }
-        
-
-        //[ForeignKey("ChildId")]
-        //public int ChildId { get; set; }
+        [ForeignKey("UserId")]
+        public int UserId { get; set; }
 
         public DateTime Date { get; set; }
         public string Name { get; set; }
-        public string ChildImg { get; set; }
-
-        
+        public string Gender { get; set; }
+        public string Image { get; set; }
     }
 }
