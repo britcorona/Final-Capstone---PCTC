@@ -25,5 +25,30 @@ namespace Final_Capstone___PCTC.Models
             var query = from users in _context.PCTCUsers select users;
             return query.ToList();
         }
+
+        public PCTCUser GetUserByUserName(string username)
+        {
+            var query = from user in _context.PCTCUsers where user.UserName == username select user;
+            // IQueryable<JitterUser> query = from user in _context.JitterUsers where user.Handle == handle select user;
+            return query.SingleOrDefault();
+        }
+
+        public bool IsUserNameAvailable(string username)
+        {
+            bool available = false;
+            try
+            {
+                PCTCUser some_user = GetUserByUserName(username);
+                if (some_user == null)
+                {
+                    available = true;
+                }
+            }
+            catch (InvalidOperationException)
+            {
+                //Nothing needs to be coded here.
+            }
+            return available;
+        }
     }
 }

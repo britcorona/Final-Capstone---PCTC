@@ -23,10 +23,12 @@ namespace Final_Capstone___PCTC.Tests.Models
             a_user.UserId = 1;
             a_user.FirstName = "Brittney";
             a_user.LastName = "Corona";
+            a_user.UserName = "britcorona";
 
             Assert.AreEqual(1, a_user.UserId);
             Assert.AreEqual("Brittney", a_user.FirstName);
             Assert.AreEqual("Corona", a_user.LastName);
+            Assert.AreEqual("britcorona", a_user.UserName);
         }
 
         [TestMethod]

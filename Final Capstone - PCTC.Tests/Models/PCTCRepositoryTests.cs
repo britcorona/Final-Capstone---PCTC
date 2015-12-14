@@ -62,15 +62,15 @@ namespace Final_Capstone___PCTC.Tests.Models
         {
             var expected = new List<PCTCUser>
             {
-                new PCTCUser { FirstName = "Joe" },
-                new PCTCUser { FirstName = "Susie" }
+                new PCTCUser { UserName = "Zach" },
+                new PCTCUser { UserName = "Blake" }
             };
 
             mock_set.Object.AddRange(expected);
             ConnectMocksToDataStore(expected);
 
             var actual = repo.GetAllUsers();
-            Assert.AreEqual("Joe", actual.First().FirstName);
+            Assert.AreEqual("Zach", actual.First().UserName);
             CollectionAssert.AreEqual(expected, actual);
         }
 
@@ -79,6 +79,97 @@ namespace Final_Capstone___PCTC.Tests.Models
         {
             var actual = repo.Context;
             Assert.IsInstanceOfType(actual, typeof(PCTCContext));
+        }
+
+        [TestMethod]
+        public void PCTCRepositoryEnsureICanGetUserByUserName()
+        {
+            var expected = new List<PCTCUser>
+            {
+                new PCTCUser { UserName = "Arianna" },
+                new PCTCUser { UserName = "bella" }
+            };
+            mock_set.Object.AddRange(expected);
+
+            ConnectMocksToDataStore(expected);
+            string username = "bella";
+            PCTCUser actual_user = repo.GetUserByUserName(username);
+            Assert.AreEqual("bella", actual_user.UserName);
+        }
+
+        [TestMethod]
+        public void PCTCRepositoryGetUserByUserNameDoesNotExist()
+        {
+            var expected = new List<PCTCUser>
+            {
+                new PCTCUser { UserName = "Arianna" },
+                new PCTCUser { UserName = "bella" }
+            };
+            mock_set.Object.AddRange(expected);
+
+            ConnectMocksToDataStore(expected);
+            string username = "somethingbogus";
+            PCTCUser actual_user = repo.GetUserByUserName(username);
+            Assert.IsNull(actual_user);
+        }
+
+        [TestMethod]
+        public void PCTCRepositoryGetUserByUserNameFailsMulitpleUsers()
+        {
+            var expected = new List<PCTCUser>
+            {
+                new PCTCUser { UserName = "zach1" },
+                new PCTCUser { UserName = "zach1" }
+            };
+            mock_set.Object.AddRange(expected);
+            ConnectMocksToDataStore(expected);
+            string username = "zach1";
+            PCTCUser acutal_user = repo.GetUserByUserName(username);
+        }
+
+        [TestMethod]
+        public void PCTCRepositoryEnsureUserNameIsAvailable()
+        {
+            var expected = new List<PCTCUser>
+            {
+                new PCTCUser { UserName = "zach2" },
+                new PCTCUser { UserName = "blake9" }
+            };
+            mock_set.Object.AddRange(expected);
+            ConnectMocksToDataStore(expected);
+            string username = "bogus";
+            bool is_available = repo.IsUserNameAvailable(username);
+            Assert.IsTrue(is_available);
+        }
+
+        [TestMethod]
+        public void PCTCRepositoryEnsureUserNameIsNotAvailable()
+        {
+            var expected = new List<PCTCUser>
+            {
+                new PCTCUser { UserName = "britt2" },
+                new PCTCUser { UserName = "shoelover5" }
+            };
+            mock_set.Object.AddRange(expected);
+            ConnectMocksToDataStore(expected);
+            string username = "britt2";
+            bool is_available = repo.IsUserNameAvailable(username);
+            Assert.IsFalse(is_available);
+        }
+
+        [TestMethod]
+        public void PCTCRepositoryEnsureUserNameIsNotAvailableForMultipleUsers()
+        {
+            var expected = new List<PCTCUser>
+            {
+                new PCTCUser { UserName = "adam1" },
+                new PCTCUser { UserName = "adam1" }
+            };
+            mock_set.Object.AddRange(expected);
+            ConnectMocksToDataStore(expected);
+            string username = "adam1";
+            bool is_available = repo.IsUserNameAvailable(username);
+            Assert.IsFalse(is_available);
         }
     }
 }
