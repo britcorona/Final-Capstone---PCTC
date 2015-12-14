@@ -13,6 +13,7 @@ namespace Final_Capstone___PCTC.Tests.Models
     {
         private Mock<PCTCContext> mock_context;
         private Mock<DbSet<PCTCUser>> mock_set;
+        private Mock<DbSet<MovieData>> mock_moviedata_set;
         private PCTCRepository repo;
 
         private void ConnectMocksToDataStore(IEnumerable<PCTCUser> data_store)

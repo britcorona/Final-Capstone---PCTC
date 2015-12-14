@@ -101,6 +101,9 @@
     <Compile Include="Models\ChildTests.cs" />
     <Compile Include="Models\MovieDataTests.cs" />
     <Compile Include="Models\PCTCRepositoryTests.cs" />
+    <Compile Include="Models\SongDataTests.cs" />
+    <Compile Include="Models\BookDataTests.cs" />
+    <Compile Include="Models\NoteDataTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
   </ItemGroup>
