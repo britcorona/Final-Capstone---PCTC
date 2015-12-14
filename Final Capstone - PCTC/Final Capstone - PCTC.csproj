@@ -188,6 +188,8 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MovieData.cs" />
+    <Compile Include="Models\PCTCContext.cs" />
+    <Compile Include="Models\PCTCRepository.cs" />
     <Compile Include="Models\PCTCUser.cs" />
     <Compile Include="Models\TimeCapsule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

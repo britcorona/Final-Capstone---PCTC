@@ -15,6 +15,15 @@ namespace Final_Capstone___PCTC.Models
             _context = new PCTCContext();
         }
 
+        public PCTCRepository(PCTCContext a_context)
+        {
+            _context = a_context;
+        }
 
+        public List<PCTCUser> GetAllUsers()
+        {
+            var query = from users in _context.PCTCUsers select users;
+            return query.ToList();
+        }
     }
 }
