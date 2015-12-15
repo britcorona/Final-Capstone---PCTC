@@ -11,11 +11,11 @@ namespace Final_Capstone___PCTC.Models
     {
         [Key]
         public int MovieId { get; set; }
-
-        //[ForeignKey("TCId")]
-        //public int TCId { get; set; }
-
+        
         public string Name { get; set; }
         public string Poster { get; set; }
+
+        //Connection to TimeCapsule.cs
+        public TimeCapsule ConnectedMDToTC { get; set; }
     }
 }

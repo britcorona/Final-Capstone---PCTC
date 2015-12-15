@@ -12,12 +12,12 @@ namespace Final_Capstone___PCTC.Models
         [Key]
         public int ChildId { get; set; }
 
-        [ForeignKey("UserId")]
-        public int UserId { get; set; }
-
         public DateTime Date { get; set; }
         public string Name { get; set; }
         public string Gender { get; set; }
         public string Image { get; set; }
+
+        //Connection of Child to User
+        public PCTCUser ConnectionChildToUser { get; set; }
     }
 }

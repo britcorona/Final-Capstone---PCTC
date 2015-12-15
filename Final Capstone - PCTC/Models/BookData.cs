@@ -8,11 +8,13 @@ namespace Final_Capstone___PCTC.Models
 {
     public class BookData
     {
-        public string Author { get; set; }
-
         [Key]
         public int BookId { get; set; }
 
+        public string Author { get; set; }
         public string Title { get; set; }
+
+        //Connection to TimeCapsule.cs
+        public TimeCapsule ConnectedBDToTC { get; set; }
     }
 }

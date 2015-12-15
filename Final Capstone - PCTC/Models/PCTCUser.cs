@@ -20,9 +20,10 @@ namespace Final_Capstone___PCTC.Models
         [RegularExpression(@"^[a-zA-Z\d]+[-_a-zA-Z\d]{0,2}[a-zA-Z\d]+")]
         public string UserName { get; set; }
 
+        //This connects a user to a TimeCapsule.
         public List<TimeCapsule> TCs { get; set; }
-        public List<Child> Child { get; set; }
-
+        public List<Child> UserConnectedToChild { get; set; }
+        
         
         public int CompareTo(object obj)
         {

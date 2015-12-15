@@ -8,12 +8,14 @@ namespace Final_Capstone___PCTC.Models
 {
     public class SongData
     {
-        public string Album { get; set; }
-        public string Artist { get; set; }
-
         [Key]
         public int SongId { get; set; }
 
+        public string Album { get; set; }
+        public string Artist { get; set; }
         public string Title { get; set; }
+
+        //Connection to TimeCapsule.cs
+        public TimeCapsule ConnectedSDToTC { get; set; }
     }
 }

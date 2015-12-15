@@ -12,17 +12,16 @@ namespace Final_Capstone___PCTC.Models
         [Key]
         public int TCId { get; set; }
 
-        //[ForeignKey("UserId")]
-        //public int UserId { get; set; }
-        
-
-        //[ForeignKey("ChildId")]
-        //public int ChildId { get; set; }
-
         public DateTime Date { get; set; }
         public string Name { get; set; }
         public string ChildImg { get; set; }
 
-        
+        //This connects with the user
+        public PCTCUser Owner { get; set; }
+
+        public List<SongData> ConnectionToSongData { get; set; }
+        public List<NoteData> ConnectionToNoteData { get; set; }
+        public List<MovieData> ConnectionToMovieData { get; set; }
+        public List<BookData> ConnectionToBookData { get; set; }
     }
 }
