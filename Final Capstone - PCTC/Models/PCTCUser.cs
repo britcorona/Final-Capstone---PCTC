@@ -22,6 +22,10 @@ namespace Final_Capstone___PCTC.Models
 
         //This connects a user to a TimeCapsule.
         public List<TimeCapsule> TCs { get; set; }
+        public PCTCUser()
+        {
+            TCs = new List<TimeCapsule>();
+        }
         public List<Child> UserConnectedToChild { get; set; }
         
         

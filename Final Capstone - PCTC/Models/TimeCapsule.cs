@@ -7,7 +7,7 @@ using System.Web;
 
 namespace Final_Capstone___PCTC.Models
 {
-    public class TimeCapsule
+    public class TimeCapsule : IComparable
     {
         [Key]
         public int TCId { get; set; }
@@ -23,5 +23,11 @@ namespace Final_Capstone___PCTC.Models
         public List<NoteData> ConnectionToNoteData { get; set; }
         public List<MovieData> ConnectionToMovieData { get; set; }
         public List<BookData> ConnectionToBookData { get; set; }
+
+        public int CompareTo(object obj)
+        {
+            TimeCapsule other_tc = obj as TimeCapsule;
+            return -1 * (this.Date.CompareTo(other_tc.Date));
+        }
     }
 }
