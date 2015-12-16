@@ -17,7 +17,7 @@ namespace Final_Capstone___PCTC.Models
         public string ChildImg { get; set; }
 
         //This connects with the user
-        public PCTCUser Owner { get; set; }
+        public virtual PCTCUser Owner { get; set; } //ask Greg if this is correct?
 
         public List<SongData> ConnectionToSongData { get; set; }
         public List<NoteData> ConnectionToNoteData { get; set; }

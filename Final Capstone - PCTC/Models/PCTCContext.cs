@@ -6,7 +6,7 @@ using System.Data.Entity;
 
 namespace Final_Capstone___PCTC.Models
 {
-    public class PCTCContext : DbContext
+    public class PCTCContext : ApplicationDbContext
     {
         public virtual DbSet<PCTCUser> PCTCUsers { get; set; }
         public DbSet<TimeCapsule> TCs { get; set; }
