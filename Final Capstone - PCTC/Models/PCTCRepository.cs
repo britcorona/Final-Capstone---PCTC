@@ -54,7 +54,7 @@ namespace Final_Capstone___PCTC.Models
 
         public bool CreateTC(PCTCUser pctcuser_user1, string tcName)
         {
-            TimeCapsule a_tc = new TimeCapsule { Name = tcName, Date = DateTime.Now, Owner = pctcuser_user1 };
+            TimeCapsule a_tc = new TimeCapsule { Name = tcName, Date = DateTime.Now, PCTCUser = pctcuser_user1 };
             bool is_added = true;
             try
             {

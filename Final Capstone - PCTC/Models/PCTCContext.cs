@@ -9,7 +9,7 @@ namespace Final_Capstone___PCTC.Models
     public class PCTCContext : ApplicationDbContext
     {
         public virtual DbSet<PCTCUser> PCTCUsers { get; set; }
-        public DbSet<TimeCapsule> TCs { get; set; }
+        //public DbSet<TimeCapsule> TCs { get; set; }
 
         //PCTCRepositoryTests Mock
         public virtual DbSet<TimeCapsule> TimeCapsules { get; set; }

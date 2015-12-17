@@ -16,8 +16,11 @@ namespace Final_Capstone___PCTC.Models
         public string Name { get; set; }
         public string ChildImg { get; set; }
 
+        [ForeignKey("PCTCUser")]
+        public int? UserId { get; set; }
+
         //This connects with the user
-        public virtual PCTCUser Owner { get; set; } //ask Greg if this is correct?
+        public virtual PCTCUser PCTCUser { get; set; } //renamed this from Owner
 
         public List<SongData> ConnectionToSongData { get; set; }
         public List<NoteData> ConnectionToNoteData { get; set; }

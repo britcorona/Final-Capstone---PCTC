@@ -24,11 +24,13 @@ namespace Final_Capstone___PCTC.Tests.Models
             a_tc.Date = expected_time;
             a_tc.Name = "Name Here";
             a_tc.ChildImg = "image.jpg";
+            a_tc.UserId = 1;
 
             Assert.AreEqual(1, a_tc.TCId);
             Assert.AreEqual(expected_time, a_tc.Date);
             Assert.AreEqual("Name Here", a_tc.Name);
             Assert.AreEqual("image.jpg", a_tc.ChildImg);
+            Assert.AreEqual(1, a_tc.UserId);
         }
     }
 }
