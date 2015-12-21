@@ -11,6 +11,8 @@ namespace Final_Capstone___PCTC.Models
         [Key]
         public int UserId { get; set; }
 
+        public virtual ApplicationUser RealUser { get; set; }
+
         public string FirstName { get; set; }
         public string LastName { get; set; }
 

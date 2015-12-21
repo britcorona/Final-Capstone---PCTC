@@ -34,6 +34,57 @@ namespace Final_Capstone___PCTC.Models
             return query.SingleOrDefault();
         }
 
+        public PCTCUser GetUserByUserId(int userid) 
+        {
+            var query = from user in _context.PCTCUsers where user.UserId == userid select user;
+            return query.SingleOrDefault();
+        }
+       
+        internal bool CreatePCTCUser(ApplicationUser realUser)
+        {
+                PCTCUser newUser = new PCTCUser { RealUser = realUser};
+                bool is_added = true;
+                try
+                {
+                    PCTCUser added_user = _context.PCTCUsers.Add(newUser);
+                    _context.SaveChanges();
+                } catch (Exception)
+                {
+                    is_added = false;
+                }
+                return is_added;
+        }
+
+        public TimeCapsule GetTCById(PCTCUser user, int tc_id)
+        {
+            var query = from u in _context.PCTCUsers where u.UserId == user.UserId select u;
+            PCTCUser found_user = query.Single<PCTCUser>();
+            var query2 = from tc in found_user.TCs where tc.TCId == tc_id select tc;
+            TimeCapsule found_tc = query2.Single<TimeCapsule>();
+            return found_tc;
+        }
+
+        public List<TimeCapsule> GetUsersTCs(PCTCUser user)
+        {
+            var query = from u in _context.PCTCUsers where u.UserId == user.UserId select u;
+            PCTCUser found_user = query.Single<PCTCUser>();
+            return found_user.TCs;
+        }
+
+        //public bool IsUserIdAvailable(int userid) //Is this correct?
+        //{
+        //    bool available = false;
+        //    try
+        //    {
+        //        PCTCUser some_userid = GetUserByUserId(userid);
+        //        if (some_userid == null)
+        //        {
+        //            available = true;
+        //        }
+        //    } catch (InvalidOperationException) { }
+        //    return available;
+        //}
+
         public bool IsUserNameAvailable(string username)
         {
             bool available = false;
@@ -67,6 +118,7 @@ namespace Final_Capstone___PCTC.Models
             }
             return is_added;
         }
+
 
         public List<TimeCapsule> GetAllTCs()
         {
