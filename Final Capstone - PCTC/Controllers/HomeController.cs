@@ -12,7 +12,7 @@ namespace Final_Capstone___PCTC.Controllers
     public class HomeController : Controller
     {
         public PCTCRepository Repo { get; set; }
-
+        [Authorize]
         public ActionResult Index()
         {
             
