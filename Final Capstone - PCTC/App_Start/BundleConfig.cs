@@ -30,6 +30,12 @@ namespace Final_Capstone___PCTC
 
             bundles.Add(new ScriptBundle("~/Content/myjavascript").Include(
                 "~/Content/app.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/angularjs").Include(
+                        "~/Scripts/angular.js",
+                        "~/Scripts/angular-aria.js",
+                        "~/Scripts/app.js"
+                        ));
         }
     }
 }
