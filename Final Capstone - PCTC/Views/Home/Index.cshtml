@@ -7,14 +7,15 @@
     ViewBag.Title = "Home Page";
 }
 
-@*
+
 @foreach (var item in Model)
 {
     <tr>
         <td>@item.Name</td>
+        <td>@item.Date</td>
     </tr>
 }
-    *@
+    
 
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">

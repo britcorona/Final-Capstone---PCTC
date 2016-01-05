@@ -66,9 +66,17 @@ namespace Final_Capstone___PCTC.Models
 
         public List<TimeCapsule> GetUsersTCs(PCTCUser user)
         {
-            var query = from u in _context.PCTCUsers where u.UserId == user.UserId select u;
-            PCTCUser found_user = query.Single<PCTCUser>();
-            return found_user.TCs;
+            //if (user != null)
+            {
+                var query = from u in _context.PCTCUsers where u.UserId == user.UserId select u;
+                PCTCUser found_user = query.Single<PCTCUser>();
+
+                var tcQuery = from tc in _context.TimeCapsules where tc.UserId == user.UserId select tc;
+                var usersTCs = tcQuery.ToList();
+
+                return usersTCs;
+            }
+           // }
         }
 
         //public bool IsUserIdAvailable(int userid) //Is this correct?

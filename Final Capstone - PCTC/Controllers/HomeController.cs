@@ -36,7 +36,7 @@ namespace Final_Capstone___PCTC.Controllers
                 }
             }
 
-            List<TimeCapsule> my_tcs = Repo.GetAllTCs();
+            List<TimeCapsule> my_tcs = Repo.GetUsersTCs(the_user_logged_in);
             return View(my_tcs);
         }
 
