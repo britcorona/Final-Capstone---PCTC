@@ -15,7 +15,6 @@ namespace Final_Capstone___PCTC.Controllers
         [Authorize]
         public ActionResult Index()
         {
-            
             string user_id = User.Identity.GetUserId();
             ApplicationUser realUser = Repo.Context.Users.FirstOrDefault(u => u.Id == user_id);
             PCTCUser the_user_logged_in = null;
@@ -53,11 +52,13 @@ namespace Final_Capstone___PCTC.Controllers
             
         }
 
-        public ActionResult Contact()
+        public ActionResult Contact(int? id)
         {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            TimeCapsule tcuser = Repo.Context.TimeCapsules.FirstOrDefault(tc => tc.TCId == id);
+            List<BookData> my_bd = Repo.GetUsersBookData(tcuser);
+            return View(my_bd);
+            
+            
         }
     }
 }

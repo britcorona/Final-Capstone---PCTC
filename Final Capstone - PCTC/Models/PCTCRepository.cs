@@ -66,7 +66,6 @@ namespace Final_Capstone___PCTC.Models
 
         public List<TimeCapsule> GetUsersTCs(PCTCUser user)
         {
-            //if (user != null)
             {
                 var query = from u in _context.PCTCUsers where u.UserId == user.UserId select u;
                 PCTCUser found_user = query.Single<PCTCUser>();
@@ -76,22 +75,16 @@ namespace Final_Capstone___PCTC.Models
 
                 return usersTCs;
             }
-           // }
         }
 
-        //public bool IsUserIdAvailable(int userid) //Is this correct?
-        //{
-        //    bool available = false;
-        //    try
-        //    {
-        //        PCTCUser some_userid = GetUserByUserId(userid);
-        //        if (some_userid == null)
-        //        {
-        //            available = true;
-        //        }
-        //    } catch (InvalidOperationException) { }
-        //    return available;
-        //}
+        public List<BookData> GetUsersBookData(TimeCapsule bookdata)
+        {
+            var query = from tc in _context.TimeCapsules where tc.TCId == bookdata.TCId select tc;
+            TimeCapsule found_bd = query.Single<TimeCapsule>();
+            var bdQuery = from bd in _context.BooksData where bd.TCId == bookdata.TCId select bd;
+            var tcBD = bdQuery.ToList();
+            return tcBD;
+        } 
 
         public bool IsUserNameAvailable(string username)
         {
