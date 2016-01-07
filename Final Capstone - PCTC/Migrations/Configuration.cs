@@ -34,8 +34,9 @@ namespace Final_Capstone___PCTC.Migrations
             context.SaveChanges();
 
             context.BooksData.AddOrUpdate(bd => bd.BookId,
-                new BookData() { Author = "Author Name", BookId = 1, Title = "Title here", TCId = 1 },
-                new BookData() { Author = "Something something", BookId = 2, Title = "Something Blah", TCId = 1 }
+                new BookData() { Author = "Author Name", BookId = 1, Title = "Title here", TCId = 2 },
+                new BookData() { Author = "Part 2", BookId = 2, Title = "Something", TCId = 2 }
+
                 );
         }
     }

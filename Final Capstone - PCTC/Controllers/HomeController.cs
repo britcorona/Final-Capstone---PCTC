@@ -25,13 +25,11 @@ namespace Final_Capstone___PCTC.Controllers
             catch (Exception)
             {
                 bool successful = Repo.CreatePCTCUser(realUser);
+
                 if (successful)
                 {
+                    the_user_logged_in = Repo.GetAllUsers().Where(u => u.RealUser.Id == user_id).Single();
 
-                }
-                else
-                {
-                    int s = 1; //What is s?
                 }
             }
 
