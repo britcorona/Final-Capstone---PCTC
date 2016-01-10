@@ -6,6 +6,7 @@
     <title>@ViewBag.Title</title>
     <title>@ViewBag.Title - Pop Culture Time Capsule</title>
     @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/TimeCapsuleDataCss.css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
@@ -30,7 +31,7 @@
         <div class="container body-content">
             @RenderBody()
             @Html.Partial("_BookPartial")
-            @Html.Partial("_MoviePartial")
+            @*@Html.Partial("_MoviePartial")*@
             <hr />
             <footer>
                 <p>&copy; @DateTime.Now.Year - Pop Culture Time Capsule</p>

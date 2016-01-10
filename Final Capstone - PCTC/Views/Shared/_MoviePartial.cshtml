@@ -1,8 +1,13 @@
-﻿@using Microsoft.AspNet.Identity
+﻿@model IEnumerable<Final_Capstone___PCTC.Models.MovieData>
 @if (Request.IsAuthenticated)
 {
     <p>This is the movie partial file</p>
 
+    @foreach (var movie in Model)
+    {
+        <td>@movie.Name</td>
+        <td>@movie.Poster</td>
+    }
 }
 else
 {

@@ -7,21 +7,21 @@
     ViewBag.Title = "Home Page";
 }
 
-
+<div class="row">
 @foreach (var item in Model)
 {
-    <tr>
-        <td>@item.Name</td>
-        <td>@item.Date</td>
-    </tr>
-    <button>@Html.ActionLink("View TimeCapsule", "Contact/" + @item.TCId, "Home")</button>
+
+    <div class="col-lg-4 test">
+        @item.Name
+        <button id="viewTcButton">@Html.ActionLink("Explore", "Contact/" + @item.TCId, "Home")</button>
+    </div>
 }
-    
+    </div>
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+@*<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
     Add a Time Capsule
-</button>
+</button>*@
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
