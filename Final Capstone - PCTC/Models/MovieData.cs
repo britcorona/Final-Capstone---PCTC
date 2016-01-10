@@ -17,5 +17,8 @@ namespace Final_Capstone___PCTC.Models
 
         //Connection to TimeCapsule.cs
         public TimeCapsule ConnectedMDToTC { get; set; }
+
+        [ForeignKey("ConnectedMDToTC")]
+        public int? TCId { get; set; }
     }
 }

@@ -15,6 +15,7 @@ namespace Final_Capstone___PCTC.Controllers
         [Authorize]
         public ActionResult Index()
         {
+            
             string user_id = User.Identity.GetUserId();
             ApplicationUser realUser = Repo.Context.Users.FirstOrDefault(u => u.Id == user_id);
             PCTCUser the_user_logged_in = null;
@@ -54,9 +55,13 @@ namespace Final_Capstone___PCTC.Controllers
         {
             TimeCapsule tcuser = Repo.Context.TimeCapsules.FirstOrDefault(tc => tc.TCId == id);
             List<BookData> my_bd = Repo.GetUsersBookData(tcuser);
+            List<MovieData> my_md = Repo.GetUsersMovieData(tcuser);
+
+            //AllData ad = new AllData();
+            //ad.BookData = my_bd;
+            //ad.MovieData = my_md;
+            
             return View(my_bd);
-            
-            
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -17,5 +18,10 @@ namespace Final_Capstone___PCTC.Models
 
         //Connection to TimeCapsule.cs
         public TimeCapsule ConnectedSDToTC { get; set; }
+
+        [ForeignKey("ConnectedSDToTC")]
+        public int? TCId { get; set; }
+
+        public string CoverArt { get; set; }
     }
 }

@@ -84,7 +84,16 @@ namespace Final_Capstone___PCTC.Models
             var bdQuery = from bd in _context.BooksData where bd.TCId == bookdata.TCId select bd;
             var tcBD = bdQuery.ToList();
             return tcBD;
-        } 
+        }
+
+        public List<MovieData> GetUsersMovieData(TimeCapsule moviedata)
+        {
+            var query = from tc in _context.TimeCapsules where tc.TCId == moviedata.TCId select tc;
+            TimeCapsule found_md = query.Single<TimeCapsule>();
+            var mdQuery = from md in _context.MoviesData where md.TCId == moviedata.TCId select md;
+            var tcMD = mdQuery.ToList();
+            return tcMD;
+        }
 
         public bool IsUserNameAvailable(string username)
         {

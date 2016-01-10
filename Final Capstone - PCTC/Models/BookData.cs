@@ -20,5 +20,7 @@ namespace Final_Capstone___PCTC.Models
 
         //Connection to TimeCapsule.cs
         public TimeCapsule ConnectedBDToTC { get; set; }
+
+        public string BookCoverImg { get; set; }
     }
 }
