@@ -28,14 +28,15 @@ namespace Final_Capstone___PCTC.Migrations
 
             context.TimeCapsules.AddOrUpdate(t => t.TCId,
                 new TimeCapsule() { Name = "Example TimeCapsule Name", Date = DateTime.Now, TCId = 1, UserId =  1, ChildImg = "test" },
-                new TimeCapsule() { Name = "Example 2 NSS", Date = DateTime.Now, TCId = 2, UserId = 1, ChildImg = "test2" }
+                new TimeCapsule() { Name = "Nashville Software School", Date = DateTime.Now, TCId = 2, UserId = 1, ChildImg = "test2" }
                 );
             context.SaveChanges();
 
             context.BooksData.AddOrUpdate(bd => bd.BookId,
                 new BookData() { Author = "J.K. Rowling", BookId = 1, Title = "Harry Potter and the Sorcerer's Stone", TCId = 1, BookCoverImg = "http://images.contentful.com/7h71s48744nc/xL3Qo6cMYEc9q3zH4RZn8c/8b25aaaea57999cc602ac2b9c88ed8db/harry-potter-and-the-sorcerers-stone-cover-image" },
                 new BookData() { Author = "J.K. Rowling", BookId = 2, Title = "Fantastic Beasts and Where to Find Them Book Cover", TCId = 1, BookCoverImg = "http://cdn.collider.com/wp-content/uploads/fantastic-beasts-and-where-to-find-them-book.jpg" },
-                new BookData() { Author = "Neil deGrasse Tyson", Title = "Death By A Black Hole", TCId = 2, BookCoverImg = "http://www.thespacereview.com/archive/871a.jpg", BookId = 3 }
+                new BookData() { Author = "Mark Myers", Title = "Smarter Way To Learn JavaScript", TCId = 2, BookCoverImg = "http://ecx.images-amazon.com/images/I/51JwcqaSYPL._SX348_BO1,204,203,200_.jpg" },
+                new BookData() { Author = "Mark Myers", Title = "Smarter Way To Learn Html & CSS", TCId = 2, BookCoverImg = "http://ecx.images-amazon.com/images/I/51JvNSxkdTL._SX348_BO1,204,203,200_.jpg" }
                 );
             context.SaveChanges();
 
